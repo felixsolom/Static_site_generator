@@ -36,7 +36,7 @@ def extract_markdown_images(text):
     return matches 
 
 def extract_markdown_links(text):
-    matches = re.findall(r"(?<!!)\[(.*?)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)"
+    matches = re.findall(r"(?<!!)\[(.*?)\]\(((?:https?:\/\/[^\s)]+)|(?:\/[^\s)]*)|(?:[^\s)]+))\)"
  ,text)
     return matches 
 
