@@ -48,9 +48,11 @@ def markdown_to_blocks(markdown):
     for block in split_blocks:
         if block:
             block = block.strip()
-            split_block = block.split('  ')
-            rejoined_block = ('').join(split_block)
-            listed_blocks.append(rejoined_block)
+            if block:
+                lines = block.split('\n')
+                cleaned_lines = [line.strip() for line in lines] 
+                cleaned_block = '\n'.join(cleaned_lines)
+                listed_blocks.append(cleaned_block)
         
     return listed_blocks
     
